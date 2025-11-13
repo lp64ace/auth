@@ -15,6 +15,8 @@
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 
+\newcommand{\norm}[1]{\lvert #1 \rvert}
+
 \title{Κλασσική Διαφορική Γεωμετρία Ι}
 \author{Δημήτριος Μποκής}
 
@@ -93,12 +95,63 @@ $M_T = \begin{bmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 1 & 0 & 1\end{bmatrix}$.
 
 \subsubsection*{Λύση}
 
-Πυρίνας είναι όλα εκείνα τα διανύσματα που ικανοποιούν τη σχέση $M_T\overrightarrow{x} = \overrightarrow{0}$ από γραμμική άλγεβρα ξέρω πως αφού ο πίνακας αντριστρέψημος οι γραμμές αλλά και οι στήλες του πίνακα είναι γραμμικά ανεξάρτητα διανύσματα, άρα πολύ απλά μπορώ να πω πως το μόνο διάνυσμα που ανοίκει στο $Ker(M_T)$ είναι το μηδενικό, $\overrightarrow{0}$. Αντίστοιχα αφού $rank(M_T) = dim(M_T)$ τότε $Im(M_T) = \mathbb{R}^{rank(M_T)}$.
+Πυρήνας είναι όλα εκείνα τα διανύσματα που ικανοποιούν τη σχέση $M_T\overrightarrow{x} = \overrightarrow{0}$ από γραμμική άλγεβρα ξέρω πως αφού ο πίνακας αντριστρέψημος οι γραμμές αλλά και οι στήλες του πίνακα είναι γραμμικά ανεξάρτητα διανύσματα, άρα πολύ απλά μπορώ να πω πως το μόνο διάνυσμα που ανοίκει στο $Ker(M_T)$ είναι το μηδενικό, $\overrightarrow{0}$. Αντίστοιχα αφού $rank(M_T) = dim(M_T)$ τότε $Im(M_T) = \mathbb{R}^{rank(M_T)}$.
+
+\newpage
 
 \section{Μαθήμα}
 
 Θεώρημα πεπλεγμένης συνάρτησης. Όρια και παράγωγος συναρτήσεων μιας μεταβλητής με διανυσματικές τιμές. Ιδιότητες διανυσματικών συναρτήσεων. Καμπύλες και παραμετροποίηση. Εφαπτόμενο διάνυσμα καμπύλης. Παράδειγμα στον κύκλο. Αναπαραμετροποίηση καμπύλης και επιτρεπτοί μετασχηματισμοί.
 
+\subsection{Άσκηση}
 
+Έστω $f : \mathbb{R} \to \mathbb{R} ^ 3$ με $f(t) = (t^2, \sin{t}, e^{2t})$.
+
+\subsubsection*{Ερώτημα}
+
+Υπολογίστε το $\lim_{t \to 0} f(t)$.
+
+\subsubsection*{Λύση}
+
+$\forall \epsilon > 0, \exists \delta > 0 : \forall x \in \mathbb{R} : \norm{x_0 - x} < \delta \implies \norm{f(x) - f(0)} < \epsilon$, από Λογισμό ΙΙΙ ξέρω πως μπορώ να διασπάσω το όριο και να υπολογίσω ξεχωριστά:
+
+$lim_{t \to 0} x^2 = 0$, $\forall \epsilon > 0, \exists \delta = \sqrt{\epsilon} : \forall \norm{x} < \delta \implies x^2 < \epsilon$.
+
+$lim_{t \to 0} sinx = 0$, $\forall \epsilon > 0, \exists \delta = \epsilon : \forall \norm{x} < \delta \implies \sin{x} < \norm{x} < \epsilon$.
+
+$\lim_{t \to 0} e^{2t} = 1$, το $e^{2t} - 1$ θετικό κοντά στο $0$, $\forall \epsilon > 0 \exists \delta = \dfrac{1}{2}\log(\epsilon + 1) : \forall \norm{t} < \delta$ έχουμε: \\
+
+Αν $t \geq 0$:
+
+\[
+  0 \leq t < \frac{1}{2}\log(\epsilon + 1)
+  \implies 2t < \log(\epsilon + 1)
+  \implies e^{2t} < \epsilon + 1
+  \implies e^{2t} - 1 < \epsilon.
+\]
+
+Αν $t < 0$:
+
+\[
+  -\delta < t < 0
+  \implies -\frac{1}{2}\log(\epsilon + 1) < t < 0
+  \implies -\log(\epsilon + 1) < 2t < 0
+  \implies \frac{1}{\epsilon + 1} < e^{2t} < 1
+  \implies -\frac{\epsilon}{\epsilon + 1} < e^{2t} - 1 < 0.
+\]
+
+Επομένως,
+
+\[
+  -\epsilon < e^{2t} - 1 < \epsilon.
+\]
+
+\subsubsection*{Ερώτημα}
+
+Βρείτε τις $f'(t)$ και $f''(t)$.
+
+\subsubsection*{Ερώτημα}
+
+Υπολογίστε τα μεγέθη $\norm{f'(0)}$ και $\norm{f''(\pi)}$.
 
 \end{document}
