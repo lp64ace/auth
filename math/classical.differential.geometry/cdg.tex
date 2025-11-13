@@ -27,7 +27,42 @@
 
 \section{Μαθήμα}
 
-Υπενθυμίσεις από Γραμμική Άλγεβρα. Βάσεις, γραμμικές απεικονίσεις, εσωτερικό, εξωτερικό, μικτό γινόμενο.
+\subsection*{Εισαγωγή}
+
+Υπενθυμίσεις από Γραμμική Άλγεβρα. Βάσεις, γραμμικές απεικονίσεις, εσωτερικό, εξωτερικό γινόμενο.
+
+\subsubsection*{Ορισμός}
+
+Έστω $V$ διανυσματικός χώρος και απεικόνιση $V \times V \to \mathbb{R}$, με $(\overrightarrow{v_1}, \overrightarrow{v_2}) \mapsto \langle \overrightarrow{v_1}, \overrightarrow{v_2} \rangle$, τότε η απεικόνιση αυτή θα λέγεται \textbf{εσωτερικό γινόμενο} αν και μόνο αν ισχύουν:
+
+\begin{itemize}
+    \item $\langle a\overrightarrow{v_1} + b\overrightarrow{v_2}, \overrightarrow{u} \rangle = 
+    a\langle \overrightarrow{v_1}, \overrightarrow{u} \rangle + 
+    b\langle \overrightarrow{v_2}, \overrightarrow{u} \rangle$
+    \item $\langle \overrightarrow{u}, \overrightarrow{v} \rangle = 
+    \langle \overrightarrow{v}, \overrightarrow{u} \rangle$
+    \item $\langle \overrightarrow{u}, \overrightarrow{u} \rangle \ge 0$
+\end{itemize}
+
+\subsubsection*{Ορισμός}
+
+Θα ορίσουμε το \textbf{μέτρο/μήκος} ενός διανύσματος $\overrightarrow{v} \in V$ σε διανυσματικό χώρο $V$ ως $\norm{\overrightarrow{v}} = \sqrt{<\overrightarrow{v}, \overrightarrow{v}>}$ όπου $<\overrightarrow{v}, \overrightarrow{v}>$ εσωτερικό γινόμενο.
+
+\subsubsection*{Ορισμός}
+
+Το \textbf{σύνηθες εσωτερικό γινόμενο} του διανυσματικού χώρου $\mathbb{R}^n$, με την κανονική βάση, για δύο διανύσματα $\overrightarrow{x}, \overrightarrow{y} \in \mathbb{R}^n$, με $\overrightarrow{x} = (x_1, x_2, \dots, x_n)$, και $\overrightarrow{y} = (y_1, y_2, \dots y_n)$, είναι το $<\overrightarrow{x}, \overrightarrow{y}> = \sum_{i = 1}^n x_iy_i$.
+
+\subsubsection*{Ορισμός}
+
+Θα ορίσουμε \textbf{γωνία} $\theta$ δύο διανυσμάτων $\overrightarrow{x}, \overrightarrow{y} \in V$ ενώς διανυσματικού χώρου $V$ ως, $\cos{\theta} = \dfrac{<\overrightarrow{x}, \overrightarrow{y}>}{\norm{u}\norm{v}}$.
+
+\subsubsection*{Ορισμός}
+
+Στο διανυσματικό χώρο $\mathbb{R}^3$ μπορούμε να ορίσουμε και το \textbf{εξωτερικό γινόμενο}. Έστω $\overrightarrow{u} = (u_1, u_2, u_3)$ και $\overrightarrow{v} = (v_1, v_2, v_3) \in \mathbb{R}^3$, διανύσματα, τότε το εξωτερικό γινόμενο των $\overrightarrow{u}$ και $\overrightarrow{v}$ ορίζεται να είναι το: \\
+
+$\overrightarrow{u} \times \overrightarrow{v} = \begin{vmatrix} \overrightarrow{e_1} & \overrightarrow{e_2} & \overrightarrow{e_3} \\ u_1 & u_2 & u_3 \\ v_1 & v_2 & v_3\end{vmatrix} = (u_2v_3 - v_2u_3)\overrightarrow{e_1} + \dots + (u_1v_2 - v_1u_2)\overrightarrow{e_3}.$
+
+\newpage
 
 \subsection{Άσκηση}
 
@@ -113,11 +148,11 @@ $M_T = \begin{bmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 1 & 0 & 1\end{bmatrix}$.
 
 \subsubsection*{Λύση}
 
-$\forall \epsilon > 0, \exists \delta > 0 : \forall x \in \mathbb{R} : \norm{x_0 - x} < \delta \implies \norm{f(x) - f(0)} < \epsilon$, από Λογισμό ΙΙΙ ξέρω πως μπορώ να διασπάσω το όριο και να υπολογίσω ξεχωριστά:
+$\forall \epsilon > 0, \exists \delta > 0 : \forall x \in \mathbb{R} : \norm{x_0 - x} < \delta \implies \norm{f(x) - f(0)} < \epsilon$, από Λογισμό ΙΙΙ ξέρω πως μπορώ να διασπάσω το όριο και να υπολογίσω ξεχωριστά: \\
 
-$lim_{t \to 0} x^2 = 0$, $\forall \epsilon > 0, \exists \delta = \sqrt{\epsilon} : \forall \norm{x} < \delta \implies x^2 < \epsilon$.
+$lim_{t \to 0} x^2 = 0$, $\forall \epsilon > 0, \exists \delta = \sqrt{\epsilon} : \forall \norm{x} < \delta \implies x^2 < \epsilon$. \\
 
-$lim_{t \to 0} sinx = 0$, $\forall \epsilon > 0, \exists \delta = \epsilon : \forall \norm{x} < \delta \implies \sin{x} < \norm{x} < \epsilon$.
+$lim_{t \to 0} sinx = 0$, $\forall \epsilon > 0, \exists \delta = \epsilon : \forall \norm{x} < \delta \implies \sin{x} < \norm{x} < \epsilon$. \\
 
 $\lim_{t \to 0} e^{2t} = 1$, το $e^{2t} - 1$ θετικό κοντά στο $0$, $\forall \epsilon > 0 \exists \delta = \dfrac{1}{2}\log(\epsilon + 1) : \forall \norm{t} < \delta$ έχουμε: \\
 
@@ -150,8 +185,34 @@ $\lim_{t \to 0} e^{2t} = 1$, το $e^{2t} - 1$ θετικό κοντά στο $0
 
 Βρείτε τις $f'(t)$ και $f''(t)$.
 
-\subsubsection*{Ερώτημα}
+\subsubsection*{Λύση}
 
-Υπολογίστε τα μεγέθη $\norm{f'(0)}$ και $\norm{f''(\pi)}$.
+Προκειμένου να υπολογίσουμε την παράγωγο μιας συνάρτησης $f : \mathbb{R} \to \mathbb{R}^3$ αρκεί να βρούμε την παράγωγο κάθε συνηστώσας ξεχωριστά. \\
+
+$f_1'(x_0) = \lim_{x \to x_0}\dfrac{x^2 - x_0^2}{x - x_0} = \lim_{x \to x_0}\dfrac{(x - x_0)(x + x_0)}x - x_0 = \lim_{x \to x_0}x + x_0 = 2x_0$. \\
+
+Οι υπόλοιπες αφήνονται για τον αναγνώστη καθώς είναι τετρημένες αποδίξεις Λογισμού Ι.
+
+\newpage
+
+\section{Καμπύλες και Παραμετροποίηση}
+
+Μπορώ να πω ότι μια καμπύλη του $\mathbb{R}^n$ είναι ένα σύνολο $M = \{(x_1, \dots, x_n) \in \mathbb{R}^n / f(x_1, \dots, x_n) = c\}$, όπου $f : \mathbb{R}^n \to \mathbb{R}$ λεία συνάρτηση και $c \in \mathbb{R}$, αυτές είναι οι λεγόμενες ισοσταθμικές καμπύλες καθώς το $c$ είναι σταθερό.
+
+Γενικά θα χρησιμοποιούμε λείες συναρτήσεις π.χ. $f : I \to \mathbb{R}^n$, $t \to (f_1(t), \dots, f_n(t))$.
+
+Ένας άλλος τρόπος να σκεφτώ τι είναι μια καμπύλη, είναι να τη δώ σαν τροχιά ενός κινούμενου σημείου $P$, έτσι αν $\overrightarrow{x}(t)$ είναι το διάνυσμα θέσης του σημείου $P$ συναρτήσει του χρόνου $t$, η καμπύλη είναι το σύνολο $M = \{P(t) \in \mathbb{R}^n / \overrightarrow{0P}(t) = \overrightarrow{x}(t)\}$.
+
+\subsubsection{Ορισμός}
+
+Έστω διανυσματική απεικόνιση $\overrightarrow{x}(t) : I \to \mathbb{R}^n$ παραμετροποιημένη καμπύλη, τότε το σύνολο $M = \{P(t) \in \mathbb{R}^n / \overrightarrow{0P}(t) = \overrightarrow{x}(t)\}$ θα ονομάζεται \textbf{ίχνος} της καμπύλης.
+
+\subsubsection{Ορισμός}
+
+Μια παραμετροποιημένη καμπύλη με διανυσματική απεικόνιση θέσης $\overrightarrow{x}(t) : I \to \mathbb{R}^n$ θα λέγεται \textbf{ομαλή} αν η "ταχύτητα" της δεν μηδενίζεται, δηλαδή $\forall t \in I$ ισχύει πως $\overrightarrow{x}'(t) \ne 0$.
+
+\subsubsection{Παράδειγμα}
+
+Η συνάρτηση $\overrightarrow{f} : \mathbb{R} \to \mathbb{R} ^2$, $\overrightarrow{f}(t) = (t^3, t^6)$ \textbf{δεν} είναι ομαλή παραμετροποίηση της καμπύλης.
 
 \end{document}
