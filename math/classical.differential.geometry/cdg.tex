@@ -13,9 +13,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{physics}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
-
-\newcommand{\norm}[1]{\lvert #1 \rvert}
 
 \title{Κλασσική Διαφορική Γεωμετρία Ι}
 \author{Δημήτριος Μποκής}
@@ -51,6 +50,12 @@
 \subsubsection*{Ορισμός}
 
 Το \textbf{σύνηθες εσωτερικό γινόμενο} του διανυσματικού χώρου $\mathbb{R}^n$, με την κανονική βάση, για δύο διανύσματα $\overrightarrow{x}, \overrightarrow{y} \in \mathbb{R}^n$, με $\overrightarrow{x} = (x_1, x_2, \dots, x_n)$, και $\overrightarrow{y} = (y_1, y_2, \dots y_n)$, είναι το $<\overrightarrow{x}, \overrightarrow{y}> = \sum_{i = 1}^n x_iy_i$.
+
+\subsubsection*{Παρατήρηση}
+
+Η παράγωγος μιάς συνάρτησης εσωτερικού γινομένου υπολογίζεται να είναι:
+
+$\dv{}{t} <u(t), v(t)> = <u'(t), v(t)> + <u(t), v'(t)>$.
 
 \subsubsection*{Ορισμός}
 
@@ -214,5 +219,27 @@ $f_1'(x_0) = \lim_{x \to x_0}\dfrac{x^2 - x_0^2}{x - x_0} = \lim_{x \to x_0}\dfr
 \subsubsection{Παράδειγμα}
 
 Η συνάρτηση $\overrightarrow{f} : \mathbb{R} \to \mathbb{R} ^2$, $\overrightarrow{f}(t) = (t^3, t^6)$ \textbf{δεν} είναι ομαλή παραμετροποίηση της καμπύλης.
+
+
+\subsubsection{Παράδειγμα}
+
+Βασικές παραμετροποιήσεις σύνηθων καμπυλών.
+
+\begin{itemize}
+	\item κύκλου ακίνας $r$, $\overrightarrow{x}(t) = (r \cos{t}, r \sin{t})$.
+	\item έλικας, $\overrightarrow{x}(t) = (a \cos{t}, a \sin{t}, bt)$.
+	\item παραβολής, $\overrightarrow{x}(t) = (t, t^2)$.
+	\item ευθεία, $\overrightarrow{x}(t) = p + tv$, $p,v \in \mathbb{R}^n$.
+\end{itemize}
+
+\subsection{Εφαπτόμενο Διάνυσμα}
+
+Είπαμε ότι μια καμπύλη μπορώ να τη σκεφτώ σαν τροχιά ενός κινούμενου σημείου, για παράδειγμα η ευθεία $y = x$ έχει παραμετροποίηση $x_1(t) = t, x_2(t) = t$ και $\overrightarrow{x}(t) : \mathbb{R} \to \mathbb{R} ^ 2$, $t \to (x_1(t), x_2(t))$. Για να προσδιορίσω την ταχύτητα και κατεύθυση χρειάζομαι την παράγωγο της $\overrightarrow{x}(t)$ όπου $\overrightarrow{x}'(t) = (x_1'(t), x_2'(t))$.
+
+\subsubsection{Ορισμός}
+
+Το διάνυσμα $\overrightarrow{x}'(t_0) = (x_1'(t_0), x_2'(t_0))$ ονομάζεται \textbf{εφαπτόμενο διάνυσμα} ή \textbf{διάνυσμα ταχύτητας} της καμπύλης στο $P(t_0)$. Ο φορέας αυτού του διανύσματος είναι η \textbf{εφαπτομένη ευθεία} της καμπύλης στο $P(t_0)$
+
+\subsection{Αναπαραμετροποίηση Καμπύλης}
 
 \end{document}
